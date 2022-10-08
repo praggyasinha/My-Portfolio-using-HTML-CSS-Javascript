@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./contact.css" />
+    <title>Contact</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="/intro.html">My Introduction</a></li>
+            <li><a href="/services.html">Services</a></li>
+            <li><a href="/blogs.html">Blogs</a></li>
+            <li><a href="/contact.html">Contact Me</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main">
+        <div class="contact-form">
+          <form name="enquiryForm" onsubmit="return validateForm()" novalidate>
+            <h1>Contact for any enquiries</h1>
+            <label for="name">
+              <div class="form-label">Enter your name</div></label
+            >
+
+            <input
+              type="text"
+              placeholder="ABC"
+              id="name"
+              class="input-field"
+            /><span id="errfn"></span><br />
+            <label for="email">Enter your mail id</label>
+            <input
+              type="email"
+              placeholder="xyz@gmail.com"
+              id="email"
+              class="input-field"
+            /><span id="errfn-mail"></span><br />
+            <label for="contact"> Enter your contact number</label>
+            <input
+              type="tel"
+              placeholder="+91-01234-56789"
+              id="contact"
+              class="input-field"
+            /><span id="errfn-contact"></span><br />
+            <label for="services">Select your service</label>
+            <input list="services" class="input-field" />
+            <datalist id="services">
+              <option value="Web Development"></option>
+              <option value="IT Consulting"></option>
+              <option value="Mobile App Development"></option></datalist
+            ><br />
+            <label for="project">Describe your project</label>
+            <input type="text" id="project" class="input-field" /><span
+              id="errfn-description"
+            ></span
+            ><br />
+            <input type="submit" value="Submit" />
+            <p id="demo"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function validateForm() {
+        const enquiryForm = document.enquiryForm;
+        var fname = enquiryForm.name;
+        var mail = enquiryForm.email.value;
+        var contactnum = enquiryForm.contact;
+        var selectservice = enquiryForm.datalist;
+        var desc = enquiryForm.project;
+        let text;
+        atpos = mail.indexOf("@");
+        dotpos = mail.lastIndexOf(".");
+
+        // console.log(enquiryForm.fname);
+
+        // if (fname.value.length>25) {
+        if (
+          fname.value.length < 5 ||
+          fname.value == null ||
+          fname.value == "" ||
+          fname.value.length > 25
+        ) {
+          document.getElementById("errfn").innerHTML =
+            "*Length should be between 5 to 25 characters";
+          document.enquiryForm.name.focus();
+          return false;
+        }
+        if (isNaN(contactnum.value) || contactnum.value.length != 10) {
+          document.getElementById("errfn-contact").innerHTML =
+            "*Please enter contact in the format +91-01234-56789";
+          document.enquiryForm.contact.focus();
+          return false;
+        }
+        if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= mail.length) {
+          document.getElementById("errfn-mail").innerHTML =
+            "*Email must contain @ and . character. There must be at least one character before and after the @. There must be at least two characters after . (dot).";
+          document.myForm.EMail.focus();
+          return false;
+        }
+        if (desc.value > 100) {
+          document.getElementById("errfn-description").innerHTML =
+            "*Please enter within 100 characters";
+          document.enquiryForm.project.focus();
+        }
+
+        return false;
+      }
+    </script>
+  </body>
+</html>

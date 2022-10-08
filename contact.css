@@ -1,0 +1,44 @@
+form {
+  box-sizing: border-box;
+}
+.contact-form {
+  padding: 100px 35px;
+}
+h1 {
+  padding-bottom: 20px;
+  color: #1c1444;
+
+}
+.row {
+  display: flex;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  width: 15vw;
+  font-size: large;
+}
+.input-field{
+    border-radius: 5px;
+    height: 20px;
+    width: 15rem;
+}
+.input-field:hover{
+  box-shadow: 5px 5px gray;
+}
+
+input[type=submit]{
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+    margin-top: 15px;
+    font-size: medium;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+input[type=submit]:hover{
+    background-color: rgb(102, 102, 182);
+    color: white;
+}
+datalist{
+    border-radius: 5px;
+}

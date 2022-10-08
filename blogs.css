@@ -1,0 +1,25 @@
+.blog-section{
+    /* width: 85vw; */
+    padding: 60px 0px 0px 35px;
+}
+h1{
+    margin-bottom: 20px;
+    color: #1c1444;
+}
+h3{
+    padding: 20px 0px 5px 0px;
+    color: #4C3575;
+}
+p{
+    padding-bottom: 10px;
+}
+button {
+    padding: 5px 13px;
+    margin: 5px 5px 15px 5px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+  button:hover {
+    background-color: rgb(102, 102, 182);
+    color: white;
+  }
